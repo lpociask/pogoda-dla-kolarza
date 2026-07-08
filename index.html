@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Spin or Stay to aplikacja iOS dla kolarzy: import trasy GPX/FIT lub Strava, prognoza pogody na osi przejazdu, mapa, replay i raport PDF."
+      content="Spin or Stay to aplikacja iOS dla kolarzy: import GPX/FIT, prognoza pogody na osi przejazdu, kolorowanie punktów krytycznych, mapa, replay i raport PDF."
     >
     <meta property="og:title" content="Spin or Stay">
     <meta
@@ -48,7 +48,7 @@
         </div>
         <div class="hero-strip" aria-label="Najważniejsze informacje">
           <span>GPX/FIT</span>
-          <span>Strava Routes</span>
+          <span>Punkty krytyczne</span>
           <span>Wiatr po trasie</span>
           <span>Raport PDF</span>
         </div>
@@ -70,7 +70,7 @@
             <article>
               <span>01</span>
               <h3>Import trasy</h3>
-              <p>GPX/FIT z pliku albo zapisane trasy ze Stravy przez OAuth.</p>
+              <p>GPX/FIT z pliku, z szybkim podglądem dystansu, punktów i przebiegu trasy.</p>
             </article>
             <article>
               <span>02</span>
@@ -84,8 +84,18 @@
             </article>
             <article>
               <span>04</span>
+              <h3>Punkty krytyczne</h3>
+              <p>Mapa maluje miejsca i odcinki, które mogą zmienić decyzję o jeździe.</p>
+            </article>
+            <article>
+              <span>05</span>
+              <h3>Mapa i replay</h3>
+              <p>Przejazd można odtworzyć punkt po punkcie, z warunkami w tle.</p>
+            </article>
+            <article>
+              <span>06</span>
               <h3>Raport dla ekipy</h3>
-              <p>PDF z mapą, wiatrem i tabelą punktów prognozy.</p>
+              <p>PDF z mapą, wiatrem, tabelą prognozy i krótkim werdyktem.</p>
             </article>
           </div>
         </div>
@@ -128,19 +138,20 @@
             <p class="section-kicker">Mapa i replay</p>
             <h2 id="showcase-title">Najważniejszy ekran: trasa z pogodą na mapie</h2>
             <p>
-              Dashboard pokazuje przebieg trasy, punkty prognozy, najmocniejszy
-              wiatr i aktualny punkt replay. To ma być szybka odpowiedź na
+              Dashboard pokazuje przebieg trasy, kolorowane punkty krytyczne,
+              najmocniejszy wiatr i aktualny punkt replay. To ma być szybka odpowiedź na
               pytanie: kręcić czy przełożyć?
             </p>
             <ul class="check-list">
               <li>Segmenty trasy na mapie Apple.</li>
+              <li>Malowanie miejsc z najmocniejszym wiatrem i ryzykiem pogody.</li>
               <li>Przełącznik mapy 2D/3D.</li>
               <li>Replay z regulacją tempa.</li>
               <li>Warunki widoczne bez grzebania w tabelach.</li>
             </ul>
           </div>
           <figure class="phone-feature">
-            <img src="assets/screens/map.jpg" alt="Ekran mapy w aplikacji Spin or Stay z trasą, punktami pogody i panelem wiatru">
+            <img src="assets/screens/map.jpg" alt="Ekran mapy w aplikacji Spin or Stay z trasą, kolorowanymi punktami krytycznymi i panelem wiatru">
           </figure>
         </div>
       </section>
@@ -152,7 +163,8 @@
             <h2 id="screens-title">Realne ekrany z aktualnego buildu</h2>
             <p>
               Strona pokazuje zrzuty z symulatora iPhone 17: trasę demo,
-              ustawienia przejazdu, mapę, timeline warunków i podsumowanie PDF.
+              ustawienia przejazdu, mapę z punktami krytycznymi, timeline warunków
+              i podsumowanie PDF.
             </p>
           </div>
 
@@ -191,7 +203,7 @@
           <div class="status-list" aria-label="Status funkcji">
             <article>
               <h3>Działa teraz</h3>
-              <p>GPX/FIT, Strava, demo weather, Open-Meteo, met.no, mapa, replay i raport PDF.</p>
+              <p>GPX/FIT, demo weather, Open-Meteo, met.no, mapa z punktami krytycznymi, replay i raport PDF.</p>
             </article>
             <article>
               <h3>Do dopięcia</h3>

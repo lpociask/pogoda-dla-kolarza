@@ -353,6 +353,16 @@ h3 {
   color: var(--white);
 }
 
+.feature-grid article:nth-child(5) span {
+  background: var(--red);
+  color: var(--white);
+}
+
+.feature-grid article:nth-child(6) span {
+  background: var(--ink);
+  color: var(--white);
+}
+
 .feature-grid p,
 .flow-grid p,
 .status-list p {
