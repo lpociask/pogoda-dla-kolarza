@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Spin or Stay to aplikacja iOS dla kolarzy: import GPX/FIT, prognoza pogody na osi przejazdu, kolorowanie punktów krytycznych, mapa, replay i raport PDF."
+      content="Spin or Stay to aplikacja iOS dla kolarzy: GPX/FIT, pogoda liczona po trasie, malowanie krytycznych odcinków, replay i raport PDF."
     >
     <meta property="og:title" content="Spin or Stay">
     <meta
       property="og:description"
-      content="Pogoda dla kolarza liczona po trasie i czasie przejazdu."
+      content="Pogoda dla kolarza liczona po trasie, czasie i realnym wietrze."
     >
     <meta property="og:image" content="assets/screens/map.jpg">
-    <meta name="theme-color" content="#0b2531">
+    <meta name="theme-color" content="#061923">
     <title>Spin or Stay - pogoda dla kolarza</title>
     <link rel="icon" href="assets/app-icon.png">
     <link rel="stylesheet" href="styles.css">
@@ -26,7 +26,7 @@
       </a>
       <nav>
         <a href="#funkcje">Funkcje</a>
-        <a href="#flow">Flow</a>
+        <a href="#mapa">Mapa</a>
         <a href="#screeny">Screeny</a>
         <a href="#status">Status</a>
       </nav>
@@ -35,123 +35,122 @@
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">Pogoda dla kolarza na iPhone</p>
+          <p class="eyebrow">Pogoda rowerowa z osi trasy</p>
           <h1 id="hero-title">Spin or Stay</h1>
           <p class="hero-lead">
-            Planuj przejazd z prognozą liczoną po trasie, czasie dotarcia do
-            kolejnych punktów i realnym wpływie wiatru na jazdę.
+            Importujesz GPX/FIT, ustawiasz tempo, a aplikacja pokazuje gdzie
+            wiatr, opad i krytyczne odcinki naprawdę wejdą w przejazd.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#screeny">Zobacz screeny</a>
-            <a class="button secondary" href="#funkcje">Co potrafi</a>
+            <a class="button primary" href="#screeny">Zobacz nowe screeny</a>
+            <a class="button secondary" href="#mapa">Mapa ryzyka</a>
           </div>
         </div>
-        <div class="hero-strip" aria-label="Najważniejsze informacje">
-          <span>GPX/FIT</span>
-          <span>Punkty krytyczne</span>
-          <span>Wiatr po trasie</span>
-          <span>Raport PDF</span>
+        <div class="hero-metrics" aria-label="Najważniejsze sygnały produktu">
+          <span><strong>109,3 km</strong> trasy demo</span>
+          <span><strong>10</strong> punktów prognozy</span>
+          <span><strong>33 km/h</strong> wiatru</span>
+          <span><strong>PDF</strong> dla ekipy</span>
         </div>
       </section>
 
-      <section id="funkcje" class="section section-intro" aria-labelledby="features-title">
+      <section id="funkcje" class="section section-cockpit" aria-labelledby="features-title">
         <div class="section-inner split">
-          <div>
-            <p class="section-kicker">O aplikacji</p>
-            <h2 id="features-title">Decyzja o jeździe oparta na trasie, nie ogólnej prognozie</h2>
+          <div class="copy-stack">
+            <p class="section-kicker">Aktualny klimat aplikacji</p>
+            <h2 id="features-title">Ciemny cockpit, szybki werdykt, trasa pomalowana ryzykiem</h2>
             <p>
-              Spin or Stay bierze trasę rowerową, dzieli ją na punkty prognozy i
-              sprawdza warunki w czasie, w którym prawdopodobnie tam dojedziesz.
-              Dzięki temu widzisz nie tylko temperaturę, ale też odczuwalny
-              wiatr, opad, zachmurzenie i fragmenty, które mogą zmienić plan.
+              Nowy build jest bardziej narzędziowy: mniej tabel na start, więcej
+              decyzji na ekranie. Spin or Stay pokazuje temperaturę, wiatr,
+              deszcz i odcinki krytyczne w języku jazdy, a nie w języku
+              meteorologicznej prognozy.
             </p>
           </div>
           <div class="feature-grid" aria-label="Najważniejsze funkcje">
             <article>
               <span>01</span>
-              <h3>Import trasy</h3>
-              <p>GPX/FIT z pliku, z szybkim podglądem dystansu, punktów i przebiegu trasy.</p>
+              <h3>GPX/FIT</h3>
+              <p>Trasa z pliku z podglądem dystansu, czasu, punktów i startu/mety.</p>
             </article>
             <article>
               <span>02</span>
-              <h3>ETA po punktach</h3>
-              <p>Prognoza jest liczona według prędkości i czasu przejazdu.</p>
+              <h3>Kokpit jazdy</h3>
+              <p>Jedno spojrzenie na wiatr, deszcz, wysiłek i alerty na najbliższy czas.</p>
             </article>
             <article>
               <span>03</span>
-              <h3>Wiatr na rowerze</h3>
-              <p>Aplikacja rozróżnia wiatr w twarz, z tyłu i boczny.</p>
+              <h3>Mapa ryzyka</h3>
+              <p>Czerwone odcinki pokazują fragmenty pod wiatr, a warstwy rozdzielają typ ryzyka.</p>
             </article>
             <article>
               <span>04</span>
-              <h3>Punkty krytyczne</h3>
-              <p>Mapa maluje miejsca i odcinki, które mogą zmienić decyzję o jeździe.</p>
+              <h3>Replay</h3>
+              <p>Przejazd można puścić po trasie i obserwować warunki punkt po punkcie.</p>
             </article>
             <article>
               <span>05</span>
-              <h3>Mapa i replay</h3>
-              <p>Przejazd można odtworzyć punkt po punkcie, z warunkami w tle.</p>
+              <h3>Providerzy pogody</h3>
+              <p>Auto, Open-Meteo, met.no i demo weather do stabilnych testów flow.</p>
             </article>
             <article>
               <span>06</span>
-              <h3>Raport dla ekipy</h3>
-              <p>PDF z mapą, wiatrem, tabelą prognozy i krótkim werdyktem.</p>
+              <h3>Raport PDF</h3>
+              <p>Podsumowanie z mapą, wiatrem i tabelą punktów do wysłania ekipie.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="flow" class="section section-flow" aria-labelledby="flow-title">
+      <section class="section section-flow" aria-labelledby="flow-title">
         <div class="section-inner">
           <div class="section-heading">
-            <p class="section-kicker">Jak działa</p>
-            <h2 id="flow-title">Od pliku trasy do gotowego planu przejazdu</h2>
+            <p class="section-kicker">Flow</p>
+            <h2 id="flow-title">Od pliku do decyzji o wyjeździe</h2>
             <p>
-              Aplikacja prowadzi przez krótki, techniczny flow: wybór trasy,
-              ustawienie startu i tempa, przeliczenie pogody, a potem dashboard
-              z mapą, warunkami i podsumowaniem.
+              Nowe ekrany pokazują pełny rytm aplikacji: wczytaj trasę,
+              ustaw plan, przelicz pogodę i czytaj wynik jak briefing przed
+              wyjazdem.
             </p>
           </div>
-          <div class="flow-grid">
+          <div class="process-grid">
             <article>
-              <span>1</span>
-              <h3>Wybierasz trasę</h3>
-              <p>Podgląd mapy, dystans, czas i liczba punktów dają szybki sanity check.</p>
+              <img src="assets/screens/route.jpg" alt="Ekran importu trasy GPX/FIT z podglądem mapy, dystansu i punktów">
+              <h3>Trasa</h3>
+              <p>Plik FIT ma od razu podgląd przebiegu, dystansu i liczby punktów.</p>
             </article>
             <article>
-              <span>2</span>
-              <h3>Ustawiasz jazdę</h3>
-              <p>Start, średnia prędkość i źródło pogody dopasowują prognozę do planu.</p>
+              <img src="assets/screens/plan.jpg" alt="Ekran planu jazdy z tempem, startem i dostawcą pogody">
+              <h3>Plan</h3>
+              <p>Tempo i provider pogody ustawiają kontekst prognozy dla całego przejazdu.</p>
             </article>
             <article>
-              <span>3</span>
-              <h3>Czytasz dashboard</h3>
-              <p>Mapa, timeline warunków, replay i summary mówią, czy jechać teraz.</p>
+              <img src="assets/screens/ride.jpg" alt="Ekran kokpitu jazdy z alertami wiatru i deszczu">
+              <h3>Kokpit</h3>
+              <p>Alerty mówią, czy trzeba zwolnić, jeść, uważać na wiatr albo opad.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section section-showcase" aria-labelledby="showcase-title">
-        <div class="section-inner showcase-layout">
-          <div>
-            <p class="section-kicker">Mapa i replay</p>
-            <h2 id="showcase-title">Najważniejszy ekran: trasa z pogodą na mapie</h2>
+      <section id="mapa" class="section section-map" aria-labelledby="map-title">
+        <div class="section-inner map-layout">
+          <div class="map-copy">
+            <p class="section-kicker">Mapa ryzyka</p>
+            <h2 id="map-title">Krytyczne odcinki są narysowane na trasie</h2>
             <p>
-              Dashboard pokazuje przebieg trasy, kolorowane punkty krytyczne,
-              najmocniejszy wiatr i aktualny punkt replay. To ma być szybka odpowiedź na
-              pytanie: kręcić czy przełożyć?
+              Najmocniejszy przeciwny wiatr nie ginie w liście punktów. Mapa
+              maluje fragment trasy na czerwono, podpisuje alert i zostawia
+              legendę dla chmur, opadu i odcinka pod wiatr.
             </p>
-            <ul class="check-list">
-              <li>Segmenty trasy na mapie Apple.</li>
-              <li>Malowanie miejsc z najmocniejszym wiatrem i ryzykiem pogody.</li>
-              <li>Przełącznik mapy 2D/3D.</li>
-              <li>Replay z regulacją tempa.</li>
-              <li>Warunki widoczne bez grzebania w tabelach.</li>
+            <ul class="signal-list">
+              <li><strong>Cyjan</strong> dla bazowej trasy.</li>
+              <li><strong>Czerwień</strong> dla fragmentów pod wiatr.</li>
+              <li><strong>Pomarańcz</strong> dla akcji i replay.</li>
+              <li><strong>Zieleń</strong> dla podsumowania, kiedy plan jest czytelny.</li>
             </ul>
           </div>
           <figure class="phone-feature">
-            <img src="assets/screens/map.jpg" alt="Ekran mapy w aplikacji Spin or Stay z trasą, kolorowanymi punktami krytycznymi i panelem wiatru">
+            <img src="assets/screens/map.jpg" alt="Mapa Spin or Stay z czerwonym odcinkiem pod wiatr, legendą ryzyka i panelem replay">
           </figure>
         </div>
       </section>
@@ -159,30 +158,38 @@
       <section id="screeny" class="section section-screens" aria-labelledby="screens-title">
         <div class="section-inner">
           <div class="section-heading narrow">
-            <p class="section-kicker">Screeny z aplikacji</p>
-            <h2 id="screens-title">Realne ekrany z aktualnego buildu</h2>
+            <p class="section-kicker">Nowe screeny</p>
+            <h2 id="screens-title">Aktualny build, aktualny wygląd</h2>
             <p>
-              Strona pokazuje zrzuty z symulatora iPhone 17: trasę demo,
-              ustawienia przejazdu, mapę z punktami krytycznymi, timeline warunków
-              i podsumowanie PDF.
+              Zrzuty są z nowej sesji symulatora iPhone: ciemny glass UI,
+              gridowe tło, karta jazdy, mapa z odcinkami krytycznymi i
+              podsumowanie z werdyktem.
             </p>
           </div>
 
           <div class="screen-grid" aria-label="Galeria ekranów aplikacji">
             <figure>
-              <img src="assets/screens/route.jpg" alt="Ekran wyboru trasy z podglądem mapy, dystansem i źródłem Karoo demo FIT">
-              <figcaption>Wybór i podgląd trasy</figcaption>
+              <img src="assets/screens/route.jpg" alt="Import GPX/FIT i podgląd trasy">
+              <figcaption>Import i podgląd trasy</figcaption>
             </figure>
             <figure>
-              <img src="assets/screens/ride.jpg" alt="Ekran ustawień przejazdu z godziną startu, średnią prędkością i źródłem pogody">
-              <figcaption>Start, tempo i provider</figcaption>
+              <img src="assets/screens/plan.jpg" alt="Plan jazdy i wybór dostawcy pogody">
+              <figcaption>Plan jazdy</figcaption>
             </figure>
             <figure>
-              <img src="assets/screens/conditions.jpg" alt="Lista warunków pogodowych po punktach trasy">
-              <figcaption>Warunki po punktach</figcaption>
+              <img src="assets/screens/ride.jpg" alt="Kokpit jazdy z kartami alertów">
+              <figcaption>Kokpit i alerty</figcaption>
             </figure>
             <figure>
-              <img src="assets/screens/summary.jpg" alt="Podsumowanie trasy z oceną warunków i przyciskiem wysłania PDF">
+              <img src="assets/screens/map.jpg" alt="Mapa z krytycznymi odcinkami pod wiatr">
+              <figcaption>Mapa ryzyka</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/screens/conditions.jpg" alt="Warunki pogodowe po punktach trasy">
+              <figcaption>Warunki po trasie</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/screens/summary.jpg" alt="Podsumowanie trasy i raport PDF">
               <figcaption>Podsumowanie i PDF</figcaption>
             </figure>
           </div>
@@ -193,21 +200,21 @@
         <div class="section-inner status-panel">
           <div>
             <p class="section-kicker">Status</p>
-            <h2 id="status-title">MVP w budowie, publiczna jest tylko strona</h2>
+            <h2 id="status-title">Publiczna strona produktu, prywatny kod aplikacji</h2>
             <p>
-              Spin or Stay jest natywną aplikacją SwiftUI. Kod aplikacji i repo
-              developerskie są prywatne, a ta strona jest publicznym opisem
-              produktu i materiałem do pokazania funkcji.
+              Ta strona pokazuje produkt i aktualne funkcje. Repo aplikacji
+              pozostaje prywatne, a publicznie dostępne są tylko pliki strony,
+              ikona i screenshoty.
             </p>
           </div>
           <div class="status-list" aria-label="Status funkcji">
             <article>
               <h3>Działa teraz</h3>
-              <p>GPX/FIT, demo weather, Open-Meteo, met.no, mapa z punktami krytycznymi, replay i raport PDF.</p>
+              <p>GPX/FIT, cockpit jazdy, providerzy pogody, mapa ryzyka, replay i raport PDF.</p>
             </article>
             <article>
-              <h3>Do dopięcia</h3>
-              <p>Konfiguracja produkcyjna WeatherKit, dystrybucja testowa i finalny opis prywatności.</p>
+              <h3>Następne dopięcia</h3>
+              <p>Dystrybucja testowa, finalne ustawienia WeatherKit i gotowy opis prywatności.</p>
             </article>
           </div>
         </div>
