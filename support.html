@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Wsparcie użytkownika dla aplikacji Spin or Stay."
+    >
+    <meta name="theme-color" content="#061923">
+    <title>Support - Spin or Stay</title>
+    <link rel="icon" href="assets/app-icon.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="Główna nawigacja">
+      <a class="brand" href="index.html" aria-label="Spin or Stay">
+        <img src="assets/app-icon.png" alt="">
+        <span>Spin or Stay</span>
+      </a>
+      <nav>
+        <a href="index.html#funkcje">Funkcje</a>
+        <a href="privacy.html">Prywatność</a>
+        <a href="weather-data.html">Dane pogodowe</a>
+      </nav>
+    </header>
+
+    <main class="legal-main">
+      <article class="legal-page">
+        <p class="eyebrow">Pomoc i kontakt</p>
+        <h1>Support</h1>
+        <p class="legal-lead">
+          Tu znajdziesz kanały kontaktu oraz podstawowe informacje potrzebne przy zgłoszeniu problemu z aplikacją.
+        </p>
+
+        <section class="legal-card">
+          <h2>Kontakt</h2>
+          <ul class="link-list">
+            <li>Email: <a href="mailto:lpociask@me.com">lpociask@me.com</a></li>
+            <li>GitHub Issues: <a href="https://github.com/lpociask/pogoda-dla-kolarza/issues">github.com/lpociask/pogoda-dla-kolarza/issues</a></li>
+          </ul>
+
+          <h2>Informacje do zgłoszenia</h2>
+          <ul>
+            <li>Model iPhone'a oraz wersja iOS.</li>
+            <li>Wersja aplikacji Spin or Stay.</li>
+            <li>Typ importowanego pliku: GPX albo FIT.</li>
+            <li>Wybrane źródło pogody: Auto, Apple, Open-Meteo, MET albo Demo.</li>
+            <li>Krótki opis kroku, po którym pojawił się problem.</li>
+          </ul>
+
+          <h2>Najczęstsze sprawy</h2>
+          <h3>Brak prognozy po trasie</h3>
+          <p>
+            Sprawdź połączenie internetowe i przełącz źródło pogody na Demo, aby upewnić się,
+            że sam plik trasy jest poprawny.
+          </p>
+
+          <h3>Apple Weather / WeatherKit</h3>
+          <p>
+            Apple Weather wymaga aktywnej konfiguracji WeatherKit dla identyfikatora aplikacji.
+            Jeżeli Apple Weather nie zwróci prognozy, aplikacja w trybie Auto może użyć kolejnego dostawcy.
+          </p>
+
+          <h3>Import pliku</h3>
+          <p>
+            Aplikacja obsługuje GPX oraz FIT. Plik musi zawierać co najmniej dwa punkty trasy.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <span>Spin or Stay</span>
+      <span>
+        <a href="index.html">Strona główna</a>
+        <a href="privacy.html">Prywatność</a>
+        <a href="weather-data.html">Dane pogodowe</a>
+      </span>
+    </footer>
+  </body>
+</html>

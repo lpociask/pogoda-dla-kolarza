@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Źródła danych pogodowych i atrybucje w aplikacji Spin or Stay."
+    >
+    <meta name="theme-color" content="#061923">
+    <title>Dane pogodowe - Spin or Stay</title>
+    <link rel="icon" href="assets/app-icon.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="Główna nawigacja">
+      <a class="brand" href="index.html" aria-label="Spin or Stay">
+        <img src="assets/app-icon.png" alt="">
+        <span>Spin or Stay</span>
+      </a>
+      <nav>
+        <a href="index.html#mapa">Mapa</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Prywatność</a>
+      </nav>
+    </header>
+
+    <main class="legal-main">
+      <article class="legal-page">
+        <p class="eyebrow">Weather attribution</p>
+        <h1>Dane pogodowe</h1>
+        <p class="legal-lead">
+          Spin or Stay pokazuje pogodę w kontekście przejazdu. Prognoza jest pobierana dla punktów trasy
+          i czasu, w którym rowerzysta ma do nich dotrzeć.
+        </p>
+
+        <section class="legal-card">
+          <table class="meta-table">
+            <tbody>
+              <tr>
+                <th>Apple Weather</th>
+                <td>
+                  Dane Apple Weather są dostępne przez WeatherKit. Gdy aplikacja wyświetla dane Apple Weather,
+                  pokazuje atrybucję Weather oraz link do
+                  <a href="https://weatherkit.apple.com/legal-attribution.html">legal attribution</a>.
+                </td>
+              </tr>
+              <tr>
+                <th>Open-Meteo</th>
+                <td>
+                  Open-Meteo dostarcza prognozy przez API HTTPS. Dane wymagają atrybucji i podlegają warunkom
+                  Open-Meteo, w tym limitom i zasadom użycia komercyjnego.
+                </td>
+              </tr>
+              <tr>
+                <th>MET Norway</th>
+                <td>
+                  MET Norway Locationforecast dostarcza prognozy dla współrzędnych. Aplikacja identyfikuje się
+                  nagłówkiem User-Agent zawierającym nazwę aplikacji i kontakt techniczny.
+                </td>
+              </tr>
+              <tr>
+                <th>Demo</th>
+                <td>
+                  Tryb Demo generuje przykładowe warunki lokalnie, aby można było przetestować ekran bez pobierania
+                  prognozy z sieci.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>Co jest wysyłane</h2>
+          <p>
+            Do dostawcy pogody trafiają współrzędne punktów trasy i czas prognozy. Aplikacja nie wysyła pliku GPX/FIT
+            jako całości do autora aplikacji.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <span>Spin or Stay</span>
+      <span>
+        <a href="index.html">Strona główna</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Prywatność</a>
+      </span>
+    </footer>
+  </body>
+</html>
