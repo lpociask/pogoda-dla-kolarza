@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Spin or Stay pomaga zaplanować przejazd rowerowy z prognozą pogody na trasie.">
+  <title>Spin or Stay - pogoda dla kolarza</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #0b2230;
+      --muted: #54636c;
+      --line: #d9e5e9;
+      --paper: #f8fbfb;
+      --white: #ffffff;
+      --cyan: #21c7d7;
+      --yellow: #f7bd3e;
+      --orange: #f07716;
+      --green: #3fa36f;
+      --shadow: 0 24px 70px rgba(11, 34, 48, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: rgba(248, 251, 251, 0.88);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 72px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .navlinks a,
+    .button {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      padding: 0 14px;
+      white-space: nowrap;
+    }
+
+    .button {
+      background: var(--ink);
+      color: var(--white);
+      font-weight: 700;
+      box-shadow: 0 10px 26px rgba(11, 34, 48, 0.18);
+    }
+
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+      align-items: center;
+      gap: clamp(32px, 6vw, 76px);
+      padding: clamp(44px, 8vh, 82px) 0 34px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0;
+      margin: 0 0 14px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(46px, 7vw, 88px);
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 650px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(18px, 2vw, 22px);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .secondary {
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: none;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 36px;
+      max-width: 640px;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      padding: 16px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .stat span {
+      color: var(--muted);
+      display: block;
+      font-size: 13px;
+      margin-top: 7px;
+    }
+
+    .phone-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .phone {
+      width: min(100%, 390px);
+      aspect-ratio: 9 / 18.5;
+      border: 10px solid #101820;
+      border-radius: 42px;
+      background: linear-gradient(180deg, #f8fbfb 0%, #edf7f8 100%);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .phone::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      width: 92px;
+      height: 26px;
+      border-radius: 20px;
+      background: #101820;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    .screen {
+      height: 100%;
+      padding: 52px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .screen-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .screen-head img {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+    }
+
+    .screen-title strong,
+    .panel strong {
+      display: block;
+      line-height: 1.15;
+    }
+
+    .screen-title span,
+    .panel span {
+      color: var(--muted);
+      display: block;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .map {
+      min-height: 220px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, transparent 48%, rgba(33, 199, 215, 0.32) 49%, rgba(33, 199, 215, 0.32) 51%, transparent 52%),
+        linear-gradient(35deg, transparent 42%, rgba(63, 163, 111, 0.24) 43%, rgba(63, 163, 111, 0.24) 47%, transparent 48%),
+        #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .route {
+      position: absolute;
+      inset: 36px 26px 42px 32px;
+      border-left: 7px solid var(--cyan);
+      border-bottom: 7px solid var(--cyan);
+      border-radius: 8px 0 0 28px;
+    }
+
+    .route::before,
+    .route::after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 0 5px rgba(240, 119, 22, 0.2);
+    }
+
+    .route::before {
+      left: -12px;
+      top: -4px;
+    }
+
+    .route::after {
+      right: -2px;
+      bottom: -12px;
+    }
+
+    .weather-chip {
+      position: absolute;
+      top: 22px;
+      right: 18px;
+      border-radius: 8px;
+      background: var(--ink);
+      color: var(--white);
+      padding: 10px 12px;
+      font-weight: 800;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 10px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      padding: 14px;
+    }
+
+    .bar {
+      height: 8px;
+      border-radius: 8px;
+      margin-top: 12px;
+      background: linear-gradient(90deg, var(--cyan), var(--yellow), var(--orange));
+    }
+
+    .section {
+      padding: 74px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .section-lead {
+      margin: 14px 0 0;
+      color: var(--muted);
+      max-width: 680px;
+      font-size: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .card {
+      min-height: 188px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      padding: 22px;
+    }
+
+    .card-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      background: var(--cyan);
+    }
+
+    .card:nth-child(2) .card-mark {
+      background: var(--yellow);
+    }
+
+    .card:nth-child(3) .card-mark {
+      background: var(--green);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .card p {
+      margin: 10px 0 0;
+      color: var(--muted);
+    }
+
+    .setup {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .code {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #0f1b20;
+      color: #f4fbfc;
+      padding: 22px;
+      overflow-x: auto;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 34px 0 46px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    @media (max-width: 860px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .navlinks {
+        flex-wrap: wrap;
+      }
+
+      .hero,
+      .setup {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 44px;
+      }
+
+      .phone-wrap {
+        justify-content: flex-start;
+      }
+
+      .stats,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .shell {
+        width: min(100% - 24px, 1120px);
+      }
+
+      .navlinks a {
+        padding: 0 10px;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .actions {
+        display: grid;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .phone {
+        border-width: 8px;
+        border-radius: 34px;
+      }
+
+      .screen {
+        padding: 48px 16px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="shell nav" aria-label="Główne">
+      <a class="brand" href="#top" aria-label="Spin or Stay">
+        <img src="assets/app-icon.png" alt="">
+        <span>Spin or Stay</span>
+      </a>
+      <div class="navlinks">
+        <a href="#features">Funkcje</a>
+        <a href="#setup">Start</a>
+        <a class="button" href="https://github.com/lpociask/pogoda-dla-kolarza">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="shell hero">
+      <div>
+        <p class="eyebrow">iOS MVP dla rowerzystów</p>
+        <h1>Spin or Stay</h1>
+        <p class="lead">
+          Aplikacja pomaga zdecydować, kiedy ruszyć w trasę: łączy import GPX/FIT,
+          prognozę po punktach przejazdu i czytelną ocenę wiatru, temperatury oraz opadów.
+        </p>
+        <div class="actions">
+          <a class="button" href="https://github.com/lpociask/pogoda-dla-kolarza">Zobacz kod</a>
+          <a class="button secondary" href="#setup">Uruchom lokalnie</a>
+        </div>
+        <div class="stats" aria-label="Najważniejsze możliwości">
+          <div class="stat">
+            <strong>GPX/FIT</strong>
+            <span>import tras i aktywności</span>
+          </div>
+          <div class="stat">
+            <strong>ETA</strong>
+            <span>pogoda według czasu przejazdu</span>
+          </div>
+          <div class="stat">
+            <strong>Strava</strong>
+            <span>pobieranie zapisanych tras</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-wrap" aria-hidden="true">
+        <div class="phone">
+          <div class="screen">
+            <div class="screen-head">
+              <img src="assets/app-icon.png" alt="">
+              <div class="screen-title">
+                <strong>Karoo Morning Ride</strong>
+                <span>prognoza demo gotowa</span>
+              </div>
+            </div>
+            <div class="map">
+              <div class="route"></div>
+              <div class="weather-chip">18&deg;C</div>
+            </div>
+            <div class="timeline">
+              <div class="panel">
+                <strong>Wiatr boczny, 17 km/h</strong>
+                <span>najbardziej odczuwalny na 14 km</span>
+                <div class="bar"></div>
+              </div>
+              <div class="panel">
+                <strong>Szansa opadów: niska</strong>
+                <span>przejazd wygląda spokojnie</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="shell">
+        <h2>Pogoda dopasowana do przejazdu</h2>
+        <p class="section-lead">
+          Spin or Stay próbkuje trasę, liczy przewidywany czas dotarcia do kolejnych punktów
+          i pokazuje warunki w momencie, w którym rowerzysta faktycznie tam będzie.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <div class="card-mark"></div>
+            <h3>Trasy z plików i Stravy</h3>
+            <p>Import GPX/FIT oraz pobieranie zapisanych tras Strava przez OAuth.</p>
+          </article>
+          <article class="card">
+            <div class="card-mark"></div>
+            <h3>Mapa i os czasu</h3>
+            <p>Punkty pogodowe na mapie, animowany marker rowerzysty i szczegóły po dotknięciu.</p>
+          </article>
+          <article class="card">
+            <div class="card-mark"></div>
+            <h3>Demo i WeatherKit</h3>
+            <p>Tryb demo działa od razu, a Apple WeatherKit można włączyć po dodaniu uprawnień.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="setup" class="section">
+      <div class="shell setup">
+        <div>
+          <h2>Start w Xcode</h2>
+          <p class="section-lead">
+            Projekt jest natywną aplikacją SwiftUI. Sekrety Stravy nie są zapisane w repozytorium;
+            lokalnie podaje się je jako ustawienia schematu albo zmienne budowania.
+          </p>
+        </div>
+        <pre class="code"><code>open PogodaDlaKolarza.xcodeproj
+# Scheme: PogodaDlaKolarza
+# Optional:
+# PDK_STRAVA_CLIENT_ID
+# PDK_STRAVA_CLIENT_SECRET</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">Spin or Stay / Pogoda dla kolarza - projekt iOS publikowany przez GitHub Pages.</div>
+  </footer>
+</body>
+</html>
