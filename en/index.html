@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Spin or Stay is an iOS cycling weather app with GPX/FIT import, route-timed forecasts, critical segment painting, replay, and PDF reports."
+    >
+    <meta property="og:title" content="Spin or Stay">
+    <meta
+      property="og:description"
+      content="Cycling weather calculated along the route, timeline, and real wind direction."
+    >
+    <meta property="og:image" content="../assets/screens/map.jpg?v=20260709">
+    <meta name="theme-color" content="#061923">
+    <title>Spin or Stay - cycling weather</title>
+    <link rel="alternate" hreflang="pl" href="https://lpociask.github.io/pogoda-dla-kolarza/">
+    <link rel="alternate" hreflang="en" href="https://lpociask.github.io/pogoda-dla-kolarza/en/">
+    <link rel="icon" href="../assets/app-icon.png">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Spin or Stay">
+        <img src="../assets/app-icon.png" alt="">
+        <span>Spin or Stay</span>
+      </a>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#map">Map</a>
+        <a href="#screens">Screens</a>
+        <a href="#status">Status</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="../">PL</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Cycling weather on the route timeline</p>
+          <h1 id="hero-title">Spin or Stay</h1>
+          <p class="hero-lead">
+            Import a GPX/FIT route, set your pace, and see where wind, rain,
+            and critical segments will actually affect the ride.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#screens">See current screens</a>
+            <a class="button secondary" href="#map">Risk map</a>
+          </div>
+        </div>
+        <div class="hero-metrics" aria-label="Product signals">
+          <span><strong>109.3 km</strong> demo route</span>
+          <span><strong>10</strong> forecast points</span>
+          <span><strong>34 km/h</strong> wind</span>
+          <span><strong>PDF</strong> ride report</span>
+        </div>
+      </section>
+
+      <section id="features" class="section section-cockpit" aria-labelledby="features-title">
+        <div class="section-inner split">
+          <div class="copy-stack">
+            <p class="section-kicker">Current app feel</p>
+            <h2 id="features-title">Dark cockpit, quick verdict, route painted by risk</h2>
+            <p>
+              The current build is focused on decisions. Spin or Stay shows
+              temperature, wind, rain, and critical route segments in ride terms,
+              not just as a generic weather table.
+            </p>
+          </div>
+          <div class="feature-grid" aria-label="Key features">
+            <article>
+              <span>01</span>
+              <h3>GPX/FIT</h3>
+              <p>Import a file and preview distance, duration, points, start, and finish.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Ride cockpit</h3>
+              <p>One screen for wind, rain, effort, and near-term riding alerts.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Risk map</h3>
+              <p>Red route segments mark headwind trouble, while layers separate risk types.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>Replay</h3>
+              <p>Play the route point by point and watch conditions change along the ride.</p>
+            </article>
+            <article>
+              <span>05</span>
+              <h3>Weather providers</h3>
+              <p>Auto, Open-Meteo, MET Norway, Apple Weather, and Demo mode for stable testing.</p>
+            </article>
+            <article>
+              <span>06</span>
+              <h3>PDF report</h3>
+              <p>Share a route summary with map, wind, forecast table, and pre-ride verdict.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-flow" aria-labelledby="flow-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="section-kicker">Flow</p>
+            <h2 id="flow-title">From route file to roll-out decision</h2>
+            <p>
+              The current screens show the full rhythm: load a route, set the
+              ride plan, calculate weather, and read the result as a pre-ride briefing.
+            </p>
+          </div>
+          <div class="process-grid">
+            <article>
+              <img src="../assets/screens/route.jpg?v=20260709" alt="Route import screen with GPX/FIT, map preview, distance, and points">
+              <h3>Route</h3>
+              <p>The FIT file immediately shows route shape, distance, and forecast points.</p>
+            </article>
+            <article>
+              <img src="../assets/screens/plan.jpg?v=20260709" alt="Ride plan screen with pace, start time, and weather provider">
+              <h3>Plan</h3>
+              <p>Pace and weather source set the context for the whole forecast.</p>
+            </article>
+            <article>
+              <img src="../assets/screens/ride.jpg?v=20260709" alt="Ride cockpit screen with wind, rain, and alert cards">
+              <h3>Cockpit</h3>
+              <p>Alerts tell you when to slow down, eat, watch wind, or expect rain.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="map" class="section section-map" aria-labelledby="map-title">
+        <div class="section-inner map-layout">
+          <div class="map-copy">
+            <p class="section-kicker">Risk map</p>
+            <h2 id="map-title">Critical segments are drawn directly on the route</h2>
+            <p>
+              The strongest headwind does not disappear into a table. The map
+              paints the problem segment red, labels the alert, and keeps a
+              legend for cloud, rain, and headwind layers.
+            </p>
+            <ul class="signal-list">
+              <li><strong>Cyan</strong> for the base route.</li>
+              <li><strong>Red</strong> for headwind segments.</li>
+              <li><strong>Orange</strong> for actions and replay.</li>
+              <li><strong>Green</strong> for readable ride summaries.</li>
+            </ul>
+          </div>
+          <figure class="phone-feature">
+            <img src="../assets/screens/map.jpg?v=20260709" alt="Spin or Stay map with red headwind segment, risk legend, and replay panel">
+          </figure>
+        </div>
+      </section>
+
+      <section id="screens" class="section section-screens" aria-labelledby="screens-title">
+        <div class="section-inner">
+          <div class="section-heading narrow">
+            <p class="section-kicker">Current screens</p>
+            <h2 id="screens-title">Fresh screenshots from the current build</h2>
+            <p>
+              Captured from the current iPhone simulator build: dark glass UI,
+              grid background, ride cockpit, risk map, route conditions, and a
+              summary with a clear verdict.
+            </p>
+          </div>
+
+          <div class="screen-grid" aria-label="App screenshot gallery">
+            <figure>
+              <img src="../assets/screens/route.jpg?v=20260709" alt="GPX/FIT import and route preview">
+              <figcaption>Import and route preview</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screens/plan.jpg?v=20260709" alt="Ride plan and weather provider selection">
+              <figcaption>Ride plan</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screens/ride.jpg?v=20260709" alt="Ride cockpit with alert cards">
+              <figcaption>Cockpit and alerts</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screens/map.jpg?v=20260709" alt="Map with critical headwind segments">
+              <figcaption>Risk map</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screens/conditions.jpg?v=20260709" alt="Weather conditions along route points">
+              <figcaption>Route conditions</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/screens/summary.jpg?v=20260709" alt="Route summary and PDF report">
+              <figcaption>Summary and PDF</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="status" class="section section-status" aria-labelledby="status-title">
+        <div class="section-inner status-panel">
+          <div>
+            <p class="section-kicker">Status</p>
+            <h2 id="status-title">Public product site, private app code</h2>
+            <p>
+              This site shows the product and current features. The app
+              repository remains private; only the website files, icon, and
+              screenshots are public.
+            </p>
+          </div>
+          <div class="status-list" aria-label="Feature status">
+            <article>
+              <h3>Available now</h3>
+              <p>GPX/FIT, ride cockpit, weather providers, risk map, replay, and PDF report.</p>
+            </article>
+            <article>
+              <h3>App Store</h3>
+              <p>Support, privacy policy, and weather data attribution pages are ready for App Store Connect.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Spin or Stay</span>
+      <span>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="weather-data.html">Weather data</a>
+        <a href="../">Polski</a>
+      </span>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Weather data sources and attributions for Spin or Stay."
+    >
+    <meta name="theme-color" content="#061923">
+    <title>Weather Data - Spin or Stay</title>
+    <link rel="alternate" hreflang="pl" href="https://lpociask.github.io/pogoda-dla-kolarza/weather-data.html">
+    <link rel="alternate" hreflang="en" href="https://lpociask.github.io/pogoda-dla-kolarza/en/weather-data.html">
+    <link rel="icon" href="../assets/app-icon.png">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Spin or Stay">
+        <img src="../assets/app-icon.png" alt="">
+        <span>Spin or Stay</span>
+      </a>
+      <nav>
+        <a href="index.html#map">Map</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="../weather-data.html">PL</a>
+      </nav>
+    </header>
+
+    <main class="legal-main">
+      <article class="legal-page">
+        <p class="eyebrow">Weather attribution</p>
+        <h1>Weather Data</h1>
+        <p class="legal-lead">
+          Spin or Stay shows weather in the context of a ride. Forecasts are fetched for route points
+          and the time when the cyclist is expected to reach them.
+        </p>
+
+        <section class="legal-card">
+          <table class="meta-table">
+            <tbody>
+              <tr>
+                <th>Apple Weather</th>
+                <td>
+                  Apple Weather data is available through WeatherKit. When the app displays Apple Weather data,
+                  it shows Weather attribution and links to
+                  <a href="https://weatherkit.apple.com/legal-attribution.html">legal attribution</a>.
+                </td>
+              </tr>
+              <tr>
+                <th>Open-Meteo</th>
+                <td>
+                  Open-Meteo provides forecasts through an HTTPS API. Its data requires attribution and is subject
+                  to Open-Meteo terms, including limits and commercial-use rules.
+                </td>
+              </tr>
+              <tr>
+                <th>MET Norway</th>
+                <td>
+                  MET Norway Locationforecast provides forecasts for coordinates. The app identifies itself with a
+                  User-Agent that includes the app name and technical contact.
+                </td>
+              </tr>
+              <tr>
+                <th>Demo</th>
+                <td>
+                  Demo mode generates sample weather locally so the screens can be tested without fetching a network forecast.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>What is sent</h2>
+          <p>
+            Weather providers receive route point coordinates and forecast times. The app does not send the full GPX/FIT
+            file to the app developer.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <span>Spin or Stay</span>
+      <span>
+        <a href="index.html">Home</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="../weather-data.html">Polski</a>
+      </span>
+    </footer>
+  </body>
+</html>
