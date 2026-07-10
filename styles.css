@@ -140,7 +140,7 @@ nav .nav-store {
   overflow: hidden;
   min-height: 700px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.72fr);
+  grid-template-columns: minmax(0, 1fr) 300px;
   align-items: center;
   gap: 48px;
   padding: 56px max(24px, calc((100vw - 1180px) / 2)) 72px;
@@ -292,22 +292,22 @@ nav .nav-store {
 }
 
 .hero-screen {
-  width: min(390px, 100%);
+  width: min(276px, 100%);
   justify-self: end;
   padding: 8px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 34px;
+  border-radius: 42px;
   background: #020b10;
   box-shadow: 0 36px 90px rgba(0, 0, 0, 0.48);
-  transform: rotate(2deg);
+  transform: rotate(1.5deg);
 }
 
 .hero-screen img {
   width: 100%;
-  height: 540px;
-  object-fit: cover;
-  object-position: top;
-  border-radius: 28px;
+  height: auto;
+  aspect-ratio: 720 / 1557;
+  object-fit: contain;
+  border-radius: 34px;
 }
 
 .signal-strip {
@@ -744,7 +744,7 @@ nav .nav-store {
 
   .hero {
     min-height: 670px;
-    grid-template-columns: minmax(0, 1fr) 300px;
+    grid-template-columns: minmax(0, 1fr) 276px;
     gap: 24px;
   }
 
