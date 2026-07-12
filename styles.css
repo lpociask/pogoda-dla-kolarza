@@ -151,11 +151,11 @@ nav .nav-store {
 }
 
 .hero-pl {
-  background-image: url("assets/screens/pl/map.jpg?v=20260710");
+  background-image: url("assets/screens/pl/map.jpg?v=20260712");
 }
 
 .hero-en {
-  background-image: url("assets/screens/en/map.jpg?v=20260710");
+  background-image: url("assets/screens/en/map.jpg?v=20260712");
 }
 
 .hero::before {
