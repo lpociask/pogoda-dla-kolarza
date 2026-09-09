@@ -1,201 +1,31 @@
 <!doctype html>
 <html lang="pl">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Spin or Stay to aplikacja iOS dla kolarzy: pogoda liczona po trasie, krytyczne odcinki, replay i raport PDF. Pobierz bezpłatnie w App Store.">
-    <meta property="og:title" content="Spin or Stay - pogoda, która jedzie z Tobą">
-    <meta property="og:description" content="Wczytaj GPX lub FIT i zobacz wiatr, deszcz oraz krytyczne odcinki dokładnie tam, gdzie spotkasz je na trasie.">
-    <meta property="og:image" content="assets/screens/pl/map.jpg?v=20260710">
-    <meta name="theme-color" content="#071923">
-    <title>Spin or Stay - pogoda dla kolarza</title>
-    <link rel="alternate" hreflang="pl" href="https://lpociask.github.io/pogoda-dla-kolarza/">
-    <link rel="alternate" hreflang="en" href="https://lpociask.github.io/pogoda-dla-kolarza/en/">
-    <link rel="icon" href="assets/app-icon.png">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <header class="site-header" aria-label="Główna nawigacja">
-      <a class="brand" href="#top" aria-label="Spin or Stay">
-        <img src="assets/app-icon.png" alt="">
-        <span>Spin or Stay</span>
-      </a>
-      <nav>
-        <a href="#funkcje">Funkcje</a>
-        <a href="#mapa">Mapa ryzyka</a>
-        <a href="#screeny">Ekrany</a>
-        <a href="support.html">Support</a>
-        <a href="privacy.html">Prywatność</a>
-        <a href="en/">EN</a>
-        <a class="nav-store" href="https://apps.apple.com/app/spin-or-stay/id6789113229">App Store</a>
-      </nav>
-    </header>
-
-    <main id="top">
-      <section class="hero hero-pl" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <div class="availability"><span></span>Dostępna teraz w App Store</div>
-          <img class="hero-icon" src="assets/app-icon.png" alt="">
-          <h1 id="hero-title">Spin or Stay</h1>
-          <p class="hero-tagline">Pogoda, która jedzie z Tobą.</p>
-          <p class="hero-lead">
-            Wczytaj trasę GPX lub FIT. Ustaw start i tempo. Zobacz, gdzie na przejeździe
-            czekają deszcz, wiatr i odcinki, na których naprawdę trzeba uważać.
-          </p>
-          <div class="hero-actions">
-            <a class="store-button" href="https://apps.apple.com/app/spin-or-stay/id6789113229" aria-label="Pobierz Spin or Stay w App Store">
-              <span class="apple-mark"></span>
-              <span><small>Pobierz w</small><strong>App Store</strong></span>
-            </a>
-            <a class="button secondary" href="#screeny">Zobacz aplikację</a>
-          </div>
-          <p class="store-note">Bezpłatna · iPhone i iPad · iOS 17 lub nowszy · bez konta i reklam</p>
-        </div>
-        <div class="hero-screen" aria-hidden="true">
-          <img src="assets/screens/pl/map.jpg?v=20260710" alt="">
-        </div>
-      </section>
-
-      <section class="signal-strip" aria-label="Najważniejsze możliwości">
-        <span><b>GPX / FIT</b> import trasy</span>
-        <span><b>3 źródła</b> danych pogodowych</span>
-        <span><b>Mapa</b> krytycznych odcinków</span>
-        <span><b>PDF</b> do udostępnienia</span>
-      </section>
-
-      <section id="funkcje" class="section section-intro" aria-labelledby="features-title">
-        <div class="section-inner">
-          <div class="section-heading">
-            <p class="section-kicker">Decyzja przed wyjazdem</p>
-            <h2 id="features-title">Nie pytaj tylko „jaka pogoda?”. Zapytaj „gdzie mnie dopadnie?”.</h2>
-            <p>
-              Prognoza jest liczona dla kolejnych punktów trasy i czasu, w którym do nich dotrzesz.
-              Dostajesz krótką odpowiedź przed startem i szczegóły, kiedy chcesz wejść głębiej.
-            </p>
-          </div>
-          <div class="feature-grid" aria-label="Najważniejsze funkcje">
-            <article class="feature-route">
-              <span>01</span>
-              <h3>Trasa ma swoją pogodę</h3>
-              <p>Import GPX/FIT, start, tempo i prognoza dopasowana do całego przejazdu.</p>
-            </article>
-            <article class="feature-ride">
-              <span>02</span>
-              <h3>Kokpit na teraz</h3>
-              <p>Wiatr, deszcz, temperatura i konkretne alerty zapisane językiem jazdy.</p>
-            </article>
-            <article class="feature-map">
-              <span>03</span>
-              <h3>Malowanie punktów krytycznych</h3>
-              <p>Trudne fragmenty są oznaczone bezpośrednio na trasie, a nie schowane w tabeli.</p>
-            </article>
-            <article class="feature-replay">
-              <span>04</span>
-              <h3>Replay przejazdu</h3>
-              <p>Przesuwaj się po trasie i obserwuj, jak warunki zmieniają się kilometr po kilometrze.</p>
-            </article>
-            <article class="feature-weather">
-              <span>05</span>
-              <h3>Więcej niż jedno źródło</h3>
-              <p>Apple Weather, Open-Meteo i MET Norway, z wygodnym trybem automatycznym.</p>
-            </article>
-            <article class="feature-report">
-              <span>06</span>
-              <h3>Raport dla ekipy</h3>
-              <p>Mapa, werdykt i warunki na trasie w czytelnym raporcie PDF.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="mapa" class="section section-map" aria-labelledby="map-title">
-        <div class="section-inner map-layout">
-          <div class="map-copy">
-            <p class="section-kicker">Najmocniejsza funkcja</p>
-            <h2 id="map-title">Ryzyko widać tam, gdzie wydarzy się na trasie.</h2>
-            <p>
-              Mapa pokazuje punkt nadejścia deszczu i maluje odcinki jazdy pod wiatr.
-              Jeden rzut oka wystarcza, by zobaczyć, gdzie zacznie się trudniejsza część dnia.
-            </p>
-            <ul class="signal-list">
-              <li><strong>Niebieska trasa</strong> pokazuje przebieg przejazdu.</li>
-              <li><strong>Czerwony odcinek</strong> oznacza najmocniejszy wiatr w twarz.</li>
-              <li><strong>Znaczniki pogody</strong> wskazują zmianę warunków.</li>
-              <li><strong>Replay</strong> prowadzi po prognozie punkt po punkcie.</li>
-            </ul>
-          </div>
-          <figure class="phone-feature">
-            <img src="assets/screens/pl/map.jpg?v=20260710" alt="Mapa Spin or Stay z zaznaczonym czerwonym odcinkiem pod wiatr i punktem deszczu">
-          </figure>
-        </div>
-      </section>
-
-      <section class="section section-flow" aria-labelledby="flow-title">
-        <div class="section-inner">
-          <div class="section-heading compact">
-            <p class="section-kicker">Prosty rytm</p>
-            <h2 id="flow-title">Trasa. Plan. Jedź.</h2>
-            <p>Trzy kroki od pliku na telefonie do czytelnego briefingu przed wyjazdem.</p>
-          </div>
-          <div class="process-grid">
-            <article>
-              <img src="assets/screens/pl/route.jpg?v=20260710" alt="Import trasy GPX lub FIT z podglądem mapy">
-              <div><span>1</span><h3>Wczytaj trasę</h3><p>Sprawdź dystans, profil pliku i przebieg na mapie.</p></div>
-            </article>
-            <article>
-              <img src="assets/screens/pl/plan.jpg?v=20260710" alt="Plan jazdy z ustawieniem startu, tempa i źródła pogody">
-              <div><span>2</span><h3>Ustaw przejazd</h3><p>Wybierz godzinę startu, tempo i źródło prognozy.</p></div>
-            </article>
-            <article>
-              <img src="assets/screens/pl/ride.jpg?v=20260710" alt="Kokpit jazdy z prognozą i alertami">
-              <div><span>3</span><h3>Podejmij decyzję</h3><p>Zobacz warunki teraz, za chwilę i dalej na trasie.</p></div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="screeny" class="section section-screens" aria-labelledby="screens-title">
-        <div class="section-inner">
-          <div class="section-heading narrow">
-            <p class="section-kicker">Prosto z App Store</p>
-            <h2 id="screens-title">Tak wygląda aktualna aplikacja.</h2>
-            <p>Te same ekrany znajdziesz dziś w wersji dostępnej w App Store.</p>
-          </div>
-          <div class="screen-grid" aria-label="Galeria ekranów aplikacji">
-            <figure><img src="assets/screens/pl/route.jpg?v=20260710" alt="Import GPX/FIT i podgląd trasy"><figcaption>Import trasy</figcaption></figure>
-            <figure><img src="assets/screens/pl/plan.jpg?v=20260710" alt="Plan jazdy i wybór źródła pogody"><figcaption>Plan jazdy</figcaption></figure>
-            <figure><img src="assets/screens/pl/ride.jpg?v=20260710" alt="Kokpit jazdy z prognozą i alertami"><figcaption>Kokpit i alerty</figcaption></figure>
-            <figure><img src="assets/screens/pl/map.jpg?v=20260710" alt="Mapa z krytycznymi odcinkami"><figcaption>Mapa ryzyka</figcaption></figure>
-            <figure><img src="assets/screens/pl/conditions.jpg?v=20260710" alt="Warunki pogodowe w punktach trasy"><figcaption>Warunki na trasie</figcaption></figure>
-            <figure><img src="assets/screens/pl/summary.jpg?v=20260710" alt="Podsumowanie przejazdu i raport PDF"><figcaption>Podsumowanie i PDF</figcaption></figure>
-          </div>
-        </div>
-      </section>
-
-      <section class="download-band" aria-labelledby="download-title">
-        <div>
-          <img src="assets/app-icon.png" alt="">
-          <div>
-            <p class="section-kicker">Gotowy na pogodę po trasie?</p>
-            <h2 id="download-title">Spin or Stay jest już w App Store.</h2>
-          </div>
-        </div>
-        <a class="store-button" href="https://apps.apple.com/app/spin-or-stay/id6789113229" aria-label="Pobierz Spin or Stay w App Store">
-          <span class="apple-mark"></span>
-          <span><small>Pobierz w</small><strong>App Store</strong></span>
-        </a>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <span>Spin or Stay · © 2026 lpociask</span>
-      <span>
-        <a href="https://apps.apple.com/app/spin-or-stay/id6789113229">App Store</a>
-        <a href="support.html">Support</a>
-        <a href="privacy.html">Prywatność</a>
-        <a href="weather-data.html">Dane pogodowe</a>
-        <a href="en/">English</a>
-      </span>
-    </footer>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0; url=https://lpociask.dev/apps/spin-or-stay/">
+  <link rel="canonical" href="https://lpociask.dev/apps/spin-or-stay/">
+  <meta name="description" content="Spin or Stay — lpociask.dev">
+  <title>Spin or Stay — lpociask.dev</title>
+  <style>
+    :root { color-scheme:light; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:#193c2c; background:#faf7ef; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; display:grid; place-items:center; padding:24px; }
+    main { width:min(100%,540px); padding:clamp(24px,6vw,48px); border:1px solid #d4decc; border-radius:28px; background:#fffdf7; }
+    h1 { font-size:40px; line-height:1.1; letter-spacing:-.04em; margin:0 0 22px; }
+    p { font-size:17px; line-height:1.6; margin:0 0 20px; }
+    a { color:#245d3f; text-underline-offset:4px; }
+    a:focus-visible { outline:3px solid #245d3f; outline-offset:5px; }
+    .destination { display:inline-block; font-weight:750; margin-bottom:20px; }
+    nav { border-top:1px solid #d4decc; padding-top:20px; display:flex; flex-wrap:wrap; gap:12px 22px; font-size:14px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Spin or Stay</h1>
+    <p>Strona aplikacji przeniosła się na <strong>lpociask.dev</strong>.</p>
+    <a class="destination" href="https://lpociask.dev/apps/spin-or-stay/">Przejdź do strony aplikacji →</a>
+    <nav aria-label="Przydatne odnośniki"><a href="support.html">Pomoc</a><a href="privacy.html">Prywatność</a><a href="weather-data.html">Dane pogodowe</a><a href="https://lpociask.dev/en/apps/spin-or-stay/" hreflang="en">English</a></nav>
+  </main>
+</body>
 </html>
